@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Sweet Home</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      color: #333;
+      background-color: #f4f4f9;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #007bff;
+    }
+
+    .menu-button {
+      display: none;
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(to right, #007bff, #00aaff);
+      color: #fff;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 0;
+    }
+
+    .search-bar {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin: -2rem 2rem 2rem;
+      border-radius: 0.5rem;
+    }
+
+    .search-bar select,
+    .search-bar input,
+    .search-bar button {
+      padding: 0.8rem;
+      font-size: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 0.5rem;
+    }
+
+    .search-bar input {
+      flex: 1;
+    }
+
+    .search-bar button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .search-bar button:hover {
+      background-color: #0056b3;
+    }
+
+    section {
+      padding: 2rem;
+      background-color: #fff;
+      margin: 1rem 2rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    section h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      color: #007bff;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .photo-grid img {
+      width: 100%;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .photo-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        background-color: #fff;
+        padding: 1rem 2rem;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .menu-open nav {
+        display: flex;
+      }
+
+      .photo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+   
+    <div class="logo">Home Sweet Home</div>
+    <button class="menu-button" onclick="toggleMenu()">☰</button>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Connect with Us</a>
+      <a href="#">Connect with People</a>
+      <a href="#">Login</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>Welcome to Home Sweet Home</h1>
+    <p>Your trusted platform to find the perfect hostel or PG at the best price.</p>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Enter location">
+    <input type="number" placeholder="Number of persons">
+    <select>
+      <option value="">Budget</option>
+      <option>1500-2000</option>
+      <option>2000-2500</option>
+      <option>2500-3000</option>
+      <option>3000-3500</option>
+      <option>3500-4000</option>
+      <option>4000-4500</option>
+      <option>4500-5000</option>
+    </select>
+    <select>
+      <option value="">Type</option>
+      <option>PG</option>
+      <option>Hostel</option>
+    </select>
+    <button>Search</button>
+  </div>
+
+  <section class="offers">
+    <h2>Special Offers</h2>
+    <div class="photo-grid">
+      <img src="offer1.jpg" alt="Offer 1">
+      <img src="offer2.jpg" alt="Offer 2">
+      <img src="offer3.jpg" alt="Offer 3">
+    </div>
+    <div class="photo-grid">
+      <img src="offer4.jpg" alt="Offer 4">
+      <img src="offer5.jpg" alt="Offer 5">
+      <img src="offer6.jpg" alt="Offer 6">
+    </div>
+  </section>
+
+  <section class="near-coaching">
+    <h2>Near Coaching</h2>
+    <div class="photo-grid">
+      <img src="coaching1.jpg" alt="Coaching 1">
+      <img src="coaching2.jpg" alt="Coaching 2">
+      <img src="coaching3.jpg" alt="Coaching 3">
+    </div>
+    <div class="photo-grid">
+      <img src="coaching4.jpg" alt="Coaching 4">
+      <img src="coaching5.jpg" alt="Coaching 5">
+      <img src="coaching6.jpg" alt="Coaching 6">
+    </div>
+  </section>
+
+  <section class="near-college">
+    <h2>Near College</h2>
+    <div class="photo-grid">
+      <img src="college1.jpg" alt="College 1">
+      <img src="college2.jpg" alt="College 2">
+      <img src="college3.jpg" alt="College 3">
+    </div>
+    <div class="photo-grid">
+      <img src="college4.jpg" alt="College 4">
+      <img src="college5.jpg" alt="College 5">
+      <img src="college6.jpg" alt="College 6">
+    </div>
+  </section>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('header').classList.toggle('menu-open');
+    }
+  </script>
+</body>
+</html>
